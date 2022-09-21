@@ -1,8 +1,9 @@
 .header-superior {
-	background-color: blueviolet;
+	background-color: #e22b86;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	
 }
 
 #logo {
@@ -27,19 +28,20 @@
 	margin-right: 25px;
 }
 
+.btn {
+	border-width: 3px;
+	font-weight: bold;
+}
+
 #social-login img {
 	height: 40px;
     margin-right: 10px;	
 }
 
-#banner{
-	display: flex;
-	justify-content: center;
-}
 
 #banner img{
 	width: 100%;
-    height: 500px;
+    height: 450px;
 }
 
 /*================================= MEDIA QUERY PARA PANTALLA CHICAS ==================================================*/
@@ -58,4 +60,5 @@
 	#social-login img {
 		margin: 5px;
 	}
+	
 }

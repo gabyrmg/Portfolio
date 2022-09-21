@@ -2,11 +2,37 @@
     padding: 20px;
 }
 
+#educacion {
+    background-color:#e22b86;
+    border-radius: inherit;
+    margin-bottom: 10px;
+    align-items: center;
+    padding: inherit;
+  
+}
+.img_educacion {
+    height: 60px;
+    vertical-align: middle;
+}
+.img_editar{
+    height: 45px;
+    vertical-align: middle;
+    
+}
+
 div{
-    background-color: blueviolet;
+    
     color: white;
 }
 
-h1, h3 {
+h1 {
+    display: inline;
+    padding: inherit;
+    margin:0px;
+    margin-bottom: 10px;
+        
+}
+
+h2, h3 {
     display: inline;
 }

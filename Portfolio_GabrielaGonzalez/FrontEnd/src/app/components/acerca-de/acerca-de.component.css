@@ -1,37 +1,68 @@
 .row {
     padding: 10px;
+    
+}
 
+.img_editar_foto_perfil{
+    height: 25px;
+    position: absolute;
+    
+}
+
+.img_editar{
+    height: 25px;
+    vertical-align: middle;
+    
 }
 
 div {
-    background-color: blueviolet;
     text-align: center;
     color:white;
 }
 
+h2 ,h3, h4 {
+    background-color:#e22b86;
+    border-radius: inherit;
+    padding: inherit;
+    margin:0px;
+}
+
+/*#nombre-titulo {
+    background-image:linear-gradient ( #0c0f3a ,#2bd6e2)
+
+
+
+h3{ 
+    border-width: 2px;
+    border-color: aqua;
+    border-radius: inherit;
+    padding: inherit;  
+    
+}}*/
+
+
+
 /*========================= MEDIA QUERY PANTALLA GRANDE ===================================*/
 
-@media (min-width:576px) {
+@media (min-width:757px) {
     #foto-perfil{
-        position:absolute;
+       position:absolute;
         width: 15%;
-        border-radius: 100%;
-        box-shadow: 3px 3px 3px gray;
-        left:2%;
-        top: 500px;
+        /*border-radius: 100%;*/
+       /* left:2%;*/
+       top: 460px;
     }
     
 }
 
 /*========================= MEDIA QUERY PANTALLA CHICA ===================================*/
-@media (max-width:575px) {
+@media (max-width:756px) {
     #foto-perfil{
-        position:absolute;
-        width: 30%;
-        border-radius: 100%;
-        box-shadow: 3px 3px 3px gray;
-        left:33%;
-        top: 630px;
+       position:absolute;
+        width: 15%;
+       /* border-radius: 100%;*/    
+       /* left:33%;*/
+        top: 800px;
     }
 }
 /*=======================================================================================*/
