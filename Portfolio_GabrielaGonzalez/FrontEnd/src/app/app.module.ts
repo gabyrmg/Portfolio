@@ -11,6 +11,9 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HardYskillsComponent } from './components/hard-yskills/hard-yskills.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { FooterComponent } from './components/footer/footer.component';
     EducacionComponent,
     HardYskillsComponent,
     ProyectosComponent,
-    FooterComponent
+    FooterComponent,
+    IniciarSesionComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,

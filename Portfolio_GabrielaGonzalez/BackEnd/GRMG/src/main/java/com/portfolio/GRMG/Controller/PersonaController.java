@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.portfolio.GRMG.Controller;
 
 import com.portfolio.GRMG.Entity.Persona;
@@ -17,10 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- *
- * @author Gaby
- */
+
 @RestController
 public class PersonaController {
     @Autowired IPersonaService ipersonaService;
@@ -42,7 +35,7 @@ public class PersonaController {
        return "La persona fue eliminida correctamente";
     }
     
-    //URL:PUERTO/personas/nombre & apellido & img
+    //URL:PUERTO/personas/editar/id/nombre & apellido & img
     @PutMapping("/personas/editar/{id}")
     public Persona editPersona(@PathVariable Long id,
                                @RequestParam("nombre") String nuevoNombre,

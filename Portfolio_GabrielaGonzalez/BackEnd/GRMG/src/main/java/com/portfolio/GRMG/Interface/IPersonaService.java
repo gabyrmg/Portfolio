@@ -1,17 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package com.portfolio.GRMG.Interface;
 
 import com.portfolio.GRMG.Entity.Persona;
 import java.util.List;
 
-
-/**
- *
- * @author Gaby
- */
 public interface IPersonaService {
     //Traer una persona
     public List<Persona> getPersona();
