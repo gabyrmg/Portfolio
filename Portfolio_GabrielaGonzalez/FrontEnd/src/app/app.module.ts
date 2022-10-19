@@ -14,6 +14,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ProyectosComponent,
     FooterComponent,
     IniciarSesionComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
