@@ -16,6 +16,10 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { NgForm } from '@angular/forms'; /*agregado por mi para formulario */
+import { FormsModule, ReactiveFormsModule} from "@angular/forms"/*agregado por mi para formulario */
+import { interceptorProvider } from './service/interceptor-service';
+
 
 
 @NgModule({
@@ -31,15 +35,20 @@ import { LoginComponent } from './components/login/login.component';
     IniciarSesionComponent,
     PortfolioComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgCircleProgressModule.forRoot({}),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,  /*agregdo por mi para formularios */
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    interceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
