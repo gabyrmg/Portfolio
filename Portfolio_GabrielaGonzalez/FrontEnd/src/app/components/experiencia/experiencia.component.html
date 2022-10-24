@@ -1,32 +1,39 @@
 <div class="row mx-auto bg-dark p-2 border border-2 rounded border-info">
     <div id="experiencia">
         <h1>Experiencia Laboral</h1>
-        <img src="../../../assets/experiencia.png"  class="img_experiencia" alt="logo experiencia">
-        <img src="../../../assets/editar.png"  class="img_editar" alt="icono editar" style="float:right">
+        <img src="../../../assets/experiencia.png" class="img_experiencia" alt="logo experiencia">
+        <img src="../../../assets/editar.png" class="img_editar" alt="icono editar" style="float:right">
     </div>
-    
-   
-    <div class="col-lg-3"></div>
-    <div class="col-lg-9 ">
-        <ul class="mx-auto  border border-2 rounded border-info">
-            <li><h2>Trabajo 1</h2> - <h3>(years)</h3> </li>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis, omnis quos adipisci
-                 animi enim perferendis pariatur veritatis? Porro quisquam ex vero quae asperiores, amet
-                  libero doloribus, dicta minima est sapiente!</p>
-        </ul>
-        <ul class="mx-auto  border border-2 rounded border-info">
-            <li><h2>Trabajo 2</h2> - <h3>(years)</h3> </li>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis, omnis quos adipisci
-                 animi enim perferendis pariatur veritatis? Porro quisquam ex vero quae asperiores, amet
-                  libero doloribus, dicta minima est sapiente!</p>
-        </ul>
-        <ul class="mx-auto  border border-2 rounded border-info">
-            <li><h2>Trabajo 3</h2> - <h3>(years)</h3> </li>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis, omnis quos adipisci
-                 animi enim perferendis pariatur veritatis? Porro quisquam ex vero quae asperiores, amet
-                  libero doloribus, dicta minima est sapiente!</p>
-        </ul>
 
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-primary" routerLink="/nuevaexp" *ngIf="isLogged">Nueva experiencia</button>
     </div>
+
+    <div class="col lg 1"></div>
+    <!--hay que arreglar par pantallla pequeña-->
+    <div class="col-lg-11"></div>
+    <table class="table">
+        <tbody>
+            <tr *ngFor="let Experiencia of expe">
+                <td>
+                    <h3>{{Experiencia.nombreE}}</h3>
+                </td>
+                <td>{{Experiencia.descripcionE}}</td>
+                <td *ngIf="isLogged">
+                    <button class="btn btn-primary" routerLink="/editexp/{{Experiencia.id}}">
+                        <i class="bi bi-pencil-fill m-2"></i>EDITAR
+                    </button>
+                </td>
+
+                <td *ngIf="isLogged">
+                    <button class="btn btn-danger" (click)="delete(Experiencia.id)">
+                        <i class="bi bi-trash3-fill"></i>ELIMINAR</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+
 
 </div>

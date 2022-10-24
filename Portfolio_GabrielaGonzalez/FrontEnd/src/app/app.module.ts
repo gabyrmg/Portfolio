@@ -19,6 +19,9 @@ import { LoginComponent } from './components/login/login.component';
 import { NgForm } from '@angular/forms'; /*agregado por mi para formulario */
 import { FormsModule, ReactiveFormsModule} from "@angular/forms"/*agregado por mi para formulario */
 import { interceptorProvider } from './service/interceptor-service';
+import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
+import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
+
 
 
 
@@ -36,6 +39,8 @@ import { interceptorProvider } from './service/interceptor-service';
     PortfolioComponent,
     HomeComponent,
     LoginComponent,
+    NewExperienciaComponent,
+    EditExperienciaComponent,
    
   ],
   imports: [
@@ -44,7 +49,8 @@ import { interceptorProvider } from './service/interceptor-service';
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
     ReactiveFormsModule,  /*agregdo por mi para formularios */
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     interceptorProvider
