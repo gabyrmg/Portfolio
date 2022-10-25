@@ -2,19 +2,23 @@
     <div id="skills">
         <h1>Hard & Soft skills</h1>
         <img src="../../../assets/skills.png"  class="img_skills" alt="logo educacion">
-        <img src="../../../assets/editar.png"  class="img_editar" alt="icono editar" style="float:right">
+       
+    </div>
+    <div class="col-lg-2">
+        <button type="button"  routerLink="/nuevaskill" class="btn btn-primary" *ngIf="isLogged">Nueva habilidad</button>
     </div>
     
     
-    <div class=" text-center col-sm-4 col-md-4 col-lg-4" >
+    <div class=" text-center col-sm-4 col-md-4 col-lg-4 circulo" *ngFor="let skill of skill" >
         <circle-progress
-            [percent]="30"
+            [percent]="(skill.porcentaje)"
             [radius]="100"
-            [imageSrc]="'../assets/logoHTML5.png'"
-            [showImage]="true"
+            [imageSrc]="''"
+            [showImage]="false"
             [imageHeight]="70"
             [imageWidth]="70"
-            [title]="'HTML'"
+            [showTitle]="true"
+            [title]="(skill.nombreH)"
             [titleColor]="'black'"
             [titleFontSize]="'1em'"
             [outerStrokeWidth]="16"
@@ -26,97 +30,19 @@
             [animationDuration]="800"
         ></circle-progress>
 
-        <circle-progress
-            [percent]="30"
-            [radius]="100"
-            [imageSrc]="'../assets/logPYTHON.png'"
-            [showImage]="true"
-            [imageHeight]="70"
-            [imageWidth]="70"
-            [title]="'Python'"
-            [titleColor]="'black'"
-            [titleFontSize]="'1em'"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="4"
-            [outerStrokeColor]="'aqua'"
-            [innerStrokeColor]="'#e22b86'"
-            [backgroundColor]="'white'"
-            [animation]="true"
-            [animationDuration]="800"
-        ></circle-progress>
+        <div>
+            <td *ngIf="isLogged">
+                <button class="btn btn-primary" routerLink="/editskill/{{skill.id}}">
+                    <i class="bi bi-pencil-fill m-2"></i>
+                </button>
+            </td>
+            <td *ngIf="isLogged">
+                <button class="btn btn-danger" (click)="delete(skill.id)">
+                    <i class="bi bi-trash3-fill"></i></button>
+            </td>
+
+        </div>
+
     </div>
-
-    <div class="text-center col-sm-4 col-md-4 col-lg-4" >
-        <circle-progress
-            [percent]="30"
-            [radius]="100"
-            [imageSrc]="'../assets/logoCSS.png'"
-            [showImage]="true"
-            [imageHeight]="70"
-            [imageWidth]="70"
-            [title]="'CSS'"
-            [titleColor]="'black'"
-            [titleFontSize]="'1em'"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="4"
-            [outerStrokeColor]="'aqua'"
-            [innerStrokeColor]="'#e22b86'"
-            [backgroundColor]="'white'"
-            [animation]="true"
-            [animationDuration]="800"
-        ></circle-progress>
-
-        <circle-progress
-        [percent]="30"
-        [radius]="100"
-        [imageSrc]="'../assets/logoC.png'"
-        [showImage]="true"
-        [imageHeight]="70"
-        [imageWidth]="70"
-        [title]="'C'"
-        [titleColor]="'black'"
-        [titleFontSize]="'1em'"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="4"
-        [outerStrokeColor]="'aqua'"
-        [innerStrokeColor]="'#e22b86'"
-        [backgroundColor]="'white'"
-        [animation]="true"
-        [animationDuration]="800"
-    ></circle-progress>
-    </div>
-
-    <div class="text-center col-sm-4 col-md-4 col-lg-4" >
-        <circle-progress
-            [percent]="90"
-            [radius]="100"
-            [imageSrc]="'../assets/logoJAVA.png'"
-            [showImage]="true"
-            [imageHeight]="70"
-            [imageWidth]="70"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="4"
-            [outerStrokeColor]="'aqua'"
-            [innerStrokeColor]="'#e22b86'"
-            [backgroundColor]="'white'"
-            [animation]="true"
-            [animationDuration]="800"
-        ></circle-progress>
-
-        <circle-progress
-        [percent]="30"
-        [radius]="100"
-        [title]="'C'"
-        [titleColor]="'black'"
-        [titleFontSize]="'1em'"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="4"
-        [outerStrokeColor]="'aqua'"
-        [innerStrokeColor]="'#e22b86'"
-        [backgroundColor]="'white'"
-        [animation]="true"
-        [animationDuration]="800"
-    ></circle-progress>
-    </div>
-    
+     
 </div>

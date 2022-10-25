@@ -21,6 +21,10 @@ import { FormsModule, ReactiveFormsModule} from "@angular/forms"/*agregado por m
 import { interceptorProvider } from './service/interceptor-service';
 import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
 import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
+import { NewEducacionComponent } from './components/educacion/new-educacion.component';
+import { EditEducacionComponent } from './components/educacion/edit-educacion.component';
+import { EditSkillComponent } from './components/hard-yskills/edit-skill.component';
+import { NewSkillComponent } from './components/hard-yskills/new-skill.component';
 
 
 
@@ -41,6 +45,10 @@ import { EditExperienciaComponent } from './components/experiencia/edit-experien
     LoginComponent,
     NewExperienciaComponent,
     EditExperienciaComponent,
+    NewEducacionComponent,
+    EditEducacionComponent,
+    EditSkillComponent,
+    NewSkillComponent,
    
   ],
   imports: [
