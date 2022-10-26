@@ -2,15 +2,14 @@ package com.portfolio.GRMG.Dto;
 
 import javax.validation.constraints.NotBlank;
 
-
 public class DtoEducacion {
+
     @NotBlank
     private String nombreEd;
-     @NotBlank
+    @NotBlank
     private String descripcionEd;
-     
-     //constructores
 
+    //constructores
     public DtoEducacion() {
     }
 
@@ -18,9 +17,8 @@ public class DtoEducacion {
         this.nombreEd = nombreEd;
         this.descripcionEd = descripcionEd;
     }
-     
-    //setters y getters
 
+    //setters y getters
     public String getNombreEd() {
         return nombreEd;
     }
@@ -36,6 +34,5 @@ public class DtoEducacion {
     public void setDescripcionEd(String descripcionEd) {
         this.descripcionEd = descripcionEd;
     }
-    
-    
+
 }

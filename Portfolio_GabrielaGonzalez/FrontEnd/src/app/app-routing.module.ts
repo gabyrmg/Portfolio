@@ -9,6 +9,8 @@ import { EditSkillComponent } from './components/hard-yskills/edit-skill.compone
 import { NewSkillComponent } from './components/hard-yskills/new-skill.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { EditProyectoComponent } from './components/proyectos/edit-proyecto.component';
+import { NewProyectoComponent } from './components/proyectos/new-proyecto.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,10 +18,12 @@ const routes: Routes = [
   { path: 'nuevaexp', component: NewExperienciaComponent },
   { path: 'nuevaedu', component: NewEducacionComponent },
   { path: 'nuevaskill', component: NewSkillComponent }, 
+  { path: 'nuevoproyecto', component: NewProyectoComponent }, 
   { path: 'editexp/:id', component: EditExperienciaComponent },
   { path: 'editedu/:id', component: EditEducacionComponent },
   { path: 'editskill/:id', component: EditSkillComponent },
-  { path: 'editaracercade/:id', component: EditAcercaDeComponent }
+  { path: 'editaracercade/:id', component: EditAcercaDeComponent },
+  { path: 'editproyecto/:id', component: EditProyectoComponent }
 
 ];
 
