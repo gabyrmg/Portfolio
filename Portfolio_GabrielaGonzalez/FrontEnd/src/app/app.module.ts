@@ -11,13 +11,12 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HardYskillsComponent } from './components/hard-yskills/hard-yskills.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { NgForm } from '@angular/forms'; /*agregado por mi para formulario */
-import { FormsModule, ReactiveFormsModule} from "@angular/forms"/*agregado por mi para formulario */
+import { NgForm } from '@angular/forms'; /*agregado  para formulario */
+import { FormsModule, ReactiveFormsModule} from "@angular/forms"/*agregado  para formulario */
 import { interceptorProvider } from './service/interceptor-service';
 import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
 import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
@@ -25,6 +24,7 @@ import { NewEducacionComponent } from './components/educacion/new-educacion.comp
 import { EditEducacionComponent } from './components/educacion/edit-educacion.component';
 import { EditSkillComponent } from './components/hard-yskills/edit-skill.component';
 import { NewSkillComponent } from './components/hard-yskills/new-skill.component';
+import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de.component';
 
 
 
@@ -39,7 +39,6 @@ import { NewSkillComponent } from './components/hard-yskills/new-skill.component
     HardYskillsComponent,
     ProyectosComponent,
     FooterComponent,
-    IniciarSesionComponent,
     PortfolioComponent,
     HomeComponent,
     LoginComponent,
@@ -49,6 +48,7 @@ import { NewSkillComponent } from './components/hard-yskills/new-skill.component
     EditEducacionComponent,
     EditSkillComponent,
     NewSkillComponent,
+    EditAcercaDeComponent,
    
   ],
   imports: [
@@ -56,7 +56,7 @@ import { NewSkillComponent } from './components/hard-yskills/new-skill.component
     AppRoutingModule,
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
-    ReactiveFormsModule,  /*agregdo por mi para formularios */
+    ReactiveFormsModule,  /*agregdo  para formularios */
     FormsModule,
     HttpClientModule
   ],

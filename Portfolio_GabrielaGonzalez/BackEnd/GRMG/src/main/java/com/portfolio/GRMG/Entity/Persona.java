@@ -9,27 +9,43 @@ import javax.validation.constraints.Size;
 
 @Entity
 public class Persona {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    
+    private int id;
+
     @NotNull
-    @Size(min = 1, max = 50, message =  "No cumple con la longitud")
+    @Size(min = 1, max = 50, message = "No cumple con la longitud, máximo 50 caracteres")
     private String nombre;
-    
+
     @NotNull
-    @Size(min = 1, max = 50, message =  "No cumple con la longitud")
+    @Size(min = 1, max = 50, message = "No cumple con la longitud, máximo 50 caracteres")
     private String apellido;
-    
-    
-    @Size(min = 1, max = 50, message =  "No cumple con la longitud")
+
+    @NotNull
+    @Size(min = 1, max = 1000, message = "No cumple con la longitud, máximo 1000 caracteres")
+    private String descripcion;
+
+    @NotNull
     private String img;
 
-    public long getId() {
+    //constructores
+    public Persona() {
+    }
+
+    public Persona(String nombre, String apellido, String descripcion, String img) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.descripcion = descripcion;
+        this.img = img;
+    }
+
+    //getters y setters
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -49,6 +65,14 @@ public class Persona {
         this.apellido = apellido;
     }
 
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
     public String getImg() {
         return img;
     }
@@ -56,6 +80,5 @@ public class Persona {
     public void setImg(String img) {
         this.img = img;
     }
-    
-    
+
 }

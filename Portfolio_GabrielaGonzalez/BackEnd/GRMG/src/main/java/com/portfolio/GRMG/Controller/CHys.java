@@ -21,8 +21,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("skill")
-@CrossOrigin(origins = "http://localhost:4200")
-/*@CrossOrigin(origins = "http://grmgfrontend.web.app")*/
+@CrossOrigin(origins = {"http://localhost:4200"/*,"https:grmgfrontend.web.app"*/})
+
 public class CHys {
 
     @Autowired
@@ -71,6 +71,7 @@ public class CHys {
         if (StringUtils.isBlank(dtohys.getNombreH())) {
             return new ResponseEntity(new Mensaje("Es obligatorio colocar habilidad"), HttpStatus.BAD_REQUEST);
         }
+        
 
         /*  if (StringUtils.isBlank(dtohys.getPorcentaje())) {
             return new ResponseEntity(new Mensaje("Es obligatorio colocar habilidad"), HttpStatus.BAD_REQUEST);
