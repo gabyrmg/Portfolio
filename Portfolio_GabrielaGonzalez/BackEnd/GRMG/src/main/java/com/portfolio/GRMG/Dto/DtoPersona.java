@@ -14,16 +14,20 @@ public class DtoPersona {
     private String descripcion;
 
     @NotBlank
+    private String titulo;
+
+    @NotBlank
     private String img;
 
     //constructores
     public DtoPersona() {
     }
 
-    public DtoPersona(String nombre, String apellido, String descripcion, String img) {
+    public DtoPersona(String nombre, String apellido, String descripcion, String titulo, String img) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.descripcion = descripcion;
+        this.titulo = titulo;
         this.img = img;
     }
 
@@ -50,6 +54,14 @@ public class DtoPersona {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public String getImg() {

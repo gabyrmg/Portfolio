@@ -42,7 +42,7 @@ public class CPersona {
     
     
 
-   /* @PostMapping("/create")
+  /* @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody DtoPersona dtoperso) {
         if ((StringUtils.isBlank(dtoperso.getNombre())) || (StringUtils.isBlank(dtoperso.getApellido())) ) {
             return new ResponseEntity(new Mensaje("Es obligatorio colocar un nombre y un apellido"), HttpStatus.BAD_REQUEST);
@@ -51,7 +51,7 @@ public class CPersona {
             return new ResponseEntity(new Mensaje("Nombre existente"), HttpStatus.BAD_REQUEST);
         }
 
-        Persona persona = new Persona(dtoperso.getNombre(),dtoperso.getApellido(), dtoperso.getDescripcion(),dtoperso.getImg());
+        Persona persona = new Persona(dtoperso.getNombre(),dtoperso.getApellido(),dtoperso.getTitulo(), dtoperso.getDescripcion(),dtoperso.getImg());
         sPersona.save(persona);
         return new ResponseEntity(new Mensaje("Persona agregada"), HttpStatus.OK);
     }*/
@@ -89,6 +89,16 @@ public class CPersona {
             return new ResponseEntity(new Mensaje("Es obligatorio colocar una descripción"), HttpStatus.BAD_REQUEST);
         }
         
+         
+        //compara nombre titulo
+        if (sPersona.existsByNombre(dtoperso.getTitulo()) && sPersona.getByNombre(dtoperso.getTitulo()).get().getId() != id) {
+            return new ResponseEntity(new Mensaje("Título existente"), HttpStatus.BAD_REQUEST);
+        }
+        //No puede estar vacio
+        if (StringUtils.isBlank(dtoperso.getTitulo())) {
+            return new ResponseEntity(new Mensaje("Es obligatorio colocar un título"), HttpStatus.BAD_REQUEST);
+        }
+        
         //compara nombre de imagen
         if (sPersona.existsByNombre(dtoperso.getImg()) && sPersona.getByNombre(dtoperso.getImg()).get().getId() != id) {
             return new ResponseEntity(new Mensaje("Imagen existente"), HttpStatus.BAD_REQUEST);
@@ -101,6 +111,7 @@ public class CPersona {
         Persona persona = sPersona.getOne(id).get();
         persona.setNombre(dtoperso.getNombre());
         persona.setApellido(dtoperso.getApellido());
+        persona.setTitulo(dtoperso.getTitulo());
         persona.setDescripcion((dtoperso.getDescripcion()));
         persona.setImg(dtoperso.getImg());
 
