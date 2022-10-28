@@ -8,7 +8,8 @@ import { Proyectos } from '../model/proyectos';
   providedIn: 'root'
 })
 export class SProyectosService {
-  URL = environment.URL + 'proyectos/'
+  //URL = environment.URL + 'proyectos/' ;
+  URL = 'https://backendgrmg.herokuapp.com/proyectos/';
 
   constructor(private httpClient: HttpClient) { }
 
