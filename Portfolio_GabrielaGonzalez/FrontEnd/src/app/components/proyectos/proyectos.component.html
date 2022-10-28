@@ -2,13 +2,9 @@
     <div id="proyectos">
         <h1>Proyectos realizados</h1>
         <img src="../../../assets/proyectos.png"  class="img_proyectos" alt="logo proyectos">
-        
+        <button type="button" id="btn_agregar" class="btn btn-outline-light" routerLink="/nuevoproyecto" *ngIf="isLogged" style="float:right">Agregar proyecto</button>
     </div>
     
-    <div class="col-lg-2">
-        <button type="button" class="btn btn-primary" routerLink="/nuevoproyecto" *ngIf="isLogged">Agregar proyecto</button>
-    </div>
-
     <div class="col lg 1"></div>
     <!--hay que arreglar par pantallla pequeña-->
     <div class="col-lg-11"></div>
@@ -16,20 +12,25 @@
         <tbody>
             <tr *ngFor="let Proyectos of proyecto">
                 <td>
-                    <h3>{{Proyectos.nombreP}}</h3>
+                    <h4>{{Proyectos.nombreP}}</h4>
                 </td>
                 <td>{{Proyectos.descripcionP}}</td>
                 <td>{{Proyectos.linkP}}</td>
 
                 <td *ngIf="isLogged">
-                    <button class="btn btn-primary" routerLink="/editproyecto/{{Proyectos.id}}">
-                        <i class="bi bi-pencil-fill m-2"></i>EDITAR
+                    <button class="btn btn-light rounded-circle mx-1" routerLink="/editproyecto/{{Proyectos.id}}">
+                        <abbr title="Click para EDITAR PROYECTO" style="font-size: 1rem bold"> <i class="bi bi-pencil-fill"
+                            style="font-size: 1rem"></i>
+                    </abbr>
+
                     </button>
                 </td>
 
                 <td *ngIf="isLogged">
-                    <button class="btn btn-danger" (click)="delete(Proyectos.id)">
-                        <i class="bi bi-trash3-fill"></i>ELIMINAR</button>
+                    <button class="btn btn-light rounded-circle" (click)="delete(Proyectos.id)">
+                        <abbr title="Click para ELIMINAR PROYECTO"> <i class="bi bi-trash3-fill"
+                            style="font-size: 1rem"></i>
+                    </abbr></button>
                 </td>
             </tr>
         </tbody>

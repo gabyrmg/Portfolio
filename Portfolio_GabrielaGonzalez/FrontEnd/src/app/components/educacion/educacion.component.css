@@ -14,11 +14,6 @@
     height: 60px;
     vertical-align: middle;
 }
-.img_editar{
-    height: 45px;
-    vertical-align: middle;
-    
-}
 
 div{
     
@@ -38,5 +33,13 @@ h2, h3 {
 }
 .table {
     color: white;
+    border-color: #e22b86;
 
+}
+
+#btn_agregar{
+    border-width: 3px;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 15px;   
 }

@@ -2,11 +2,10 @@
     <div id="experiencia">
         <h1>Experiencia Laboral</h1>
         <img src="../../../assets/experiencia.png" class="img_experiencia" alt="logo experiencia">
-        <img src="../../../assets/editar.png" class="img_editar" alt="icono editar" style="float:right">
-    </div>
+        <button type="button" id="btn_agregar" class="btn btn-outline-light" routerLink="/nuevaexp" *ngIf="isLogged"
+            style="float:right">
+            Agregar experiencia</button>
 
-    <div class="col-lg-2">
-        <button type="button" class="btn btn-primary" routerLink="/nuevaexp" *ngIf="isLogged">Nueva experiencia</button>
     </div>
 
     <div class="col lg 1"></div>
@@ -16,18 +15,25 @@
         <tbody>
             <tr *ngFor="let Experiencia of expe">
                 <td>
-                    <h3>{{Experiencia.nombreE}}</h3>
+                    <h4>{{Experiencia.nombreE}}</h4>
                 </td>
                 <td>{{Experiencia.descripcionE}}</td>
                 <td *ngIf="isLogged">
-                    <button class="btn btn-primary" routerLink="/editexp/{{Experiencia.id}}">
-                        <i class="bi bi-pencil-fill m-2"></i>EDITAR
+                    <button class="btn btn-light rounded-circle mx-1" routerLink="/editexp/{{Experiencia.id}}">
+
+                        <abbr title="Click para EDITAR EXPERIENCIA LABORAL" style="font-size: 1rem bold"> <i class="bi bi-pencil-fill"
+                                style="font-size: 1rem"></i>
+                        </abbr>
+
                     </button>
                 </td>
 
                 <td *ngIf="isLogged">
-                    <button class="btn btn-danger" (click)="delete(Experiencia.id)">
-                        <i class="bi bi-trash3-fill"></i>ELIMINAR</button>
+                    <button class="btn btn-light rounded-circle" (click)="delete(Experiencia.id)">
+                        <abbr title="Click para ELIMINAR EXPERIENCIA LABORAL"> <i class="bi bi-trash3-fill"
+                                style="font-size: 1rem"></i>
+                        </abbr>
+                    </button>
                 </td>
             </tr>
         </tbody>
