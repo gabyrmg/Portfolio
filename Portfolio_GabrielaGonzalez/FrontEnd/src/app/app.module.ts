@@ -27,6 +27,7 @@ import { NewSkillComponent } from './components/hard-yskills/new-skill.component
 import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de.component';
 import { NewProyectoComponent } from './components/proyectos/new-proyecto.component';
 import { EditProyectoComponent } from './components/proyectos/edit-proyecto.component';
+import { EditHeaderComponent } from './components/header/edit-header/edit-header.component';
 
 
 
@@ -53,6 +54,7 @@ import { EditProyectoComponent } from './components/proyectos/edit-proyecto.comp
     EditAcercaDeComponent,
     NewProyectoComponent,
     EditProyectoComponent,
+    EditHeaderComponent,
    
   ],
   imports: [
