@@ -8,8 +8,8 @@ import { Hardyskill } from '../model/hardyskill';
   providedIn: 'root'
 })
 export class SHardyskillsService {
- // URL = environment.URL + 'skill/' ;
- URL = ' https://backendgrmg.herokuapp.com/skill/';
+ URL = environment.URL + 'skill/' ;
+// URL = ' https://backendgrmg.herokuapp.com/skill/';
 
   constructor(private httpClient: HttpClient) { }
 
