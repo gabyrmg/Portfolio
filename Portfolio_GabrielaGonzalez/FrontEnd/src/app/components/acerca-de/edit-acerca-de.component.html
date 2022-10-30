@@ -30,10 +30,28 @@
                 </div>
 
                 <br>
+<<<<<<< HEAD
               <!-- <div class="form-group">
+=======
+               
+             <!-- <div class="form-group">
+                    <label for="img">Coloque URL de la imagen</label>
+                    <input type="text" class="form-control" id="img" name="img"
+                        [(ngModel)]="perso.img" required>
+                </div>-->
+
+                <div class="form-group">
+>>>>>>> 69facf32c691a2bbd4e8c785f7cbc406db7a7b7f
                     <label for="img">Imagen formato .jpg/.jpeg/.png</label>
                     <input type="file" class="form-control" id="img" name="img" [(ngModel)]="perso.img" required
                         (change)="uploadImage($event) " accept=".jpg, .jpeg, .png">
+<<<<<<< HEAD
+                </div>
+                <br>
+                <div class="imagen">
+                    <img [src]="imageService.url" width="200px">
+=======
+>>>>>>> 1e2b5e5c5f908c8f3161f3c781eb7bbf216f43e3
                 </div>
                 <div class="imagen" ><img [src]="imageService.url" width="200px"></div>
                 <br>-->
