@@ -20,12 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-<<<<<<< HEAD
-@RequestMapping("/skill")
-@CrossOrigin(origins = {"http://localhost:4200"/*,"https:grmgfrontend.web.app"*/})
-=======
 @RequestMapping("skill")
-@CrossOrigin (origins = "https://frontendgrmg.web.app")
+@CrossOrigin(origins = {"http://localhost:4200"/*,"https:grmgfrontend.web.app"*/})
 
 public class CHys {
 

@@ -20,14 +20,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-<<<<<<< HEAD
-@RequestMapping("/persona")
-@CrossOrigin(origins = {"http://localhost:4200"/*,"https:grmgfrontend.web.app"*/})
-=======
 @RequestMapping("persona")
-@CrossOrigin (origins = "https://frontendgrmg.web.app")
+@CrossOrigin(origins = {"http://localhost:4200"/*,"https:grmgfrontend.web.app"*/})
 public class CPersona {
-
     @Autowired
     SPersona sPersona;
 
@@ -36,31 +31,30 @@ public class CPersona {
         List<Persona> list = sPersona.list();
         return new ResponseEntity(list, HttpStatus.OK);
     }
-
+    
     @GetMapping("/detail/{id}")
     public ResponseEntity<Persona> getById(@PathVariable("id") int id) {
-        if (!sPersona.existsById(id)) {
-            return new ResponseEntity(new Mensaje("ID inexistente"), HttpStatus.NOT_FOUND);
-        }
-        Persona persona = sPersona.getOne(id).get();
-        return new ResponseEntity(persona, HttpStatus.OK);
+       if(!sPersona.existsById(id))
+           return new ResponseEntity(new Mensaje("ID inexistente"), HttpStatus.NOT_FOUND);
+       Persona persona = sPersona.getOne(id).get();
+       return new ResponseEntity(persona, HttpStatus.OK);
     }
     
     
 
- @PostMapping("/create")
+  /* @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody DtoPersona dtoperso) {
-        if ((StringUtils.isBlank(dtoperso.getNombre())) || (StringUtils.isBlank(dtoperso.getApellido()))) {
+        if ((StringUtils.isBlank(dtoperso.getNombre())) || (StringUtils.isBlank(dtoperso.getApellido())) ) {
             return new ResponseEntity(new Mensaje("Es obligatorio colocar un nombre y un apellido"), HttpStatus.BAD_REQUEST);
         }
         if (sPersona.existsByNombre(dtoperso.getNombre())) {
             return new ResponseEntity(new Mensaje("Nombre existente"), HttpStatus.BAD_REQUEST);
         }
 
-        Persona persona = new Persona(dtoperso.getNombre(), dtoperso.getApellido(), dtoperso.getTitulo(), dtoperso.getDescripcion(), dtoperso.getImg());
+        Persona persona = new Persona(dtoperso.getNombre(),dtoperso.getApellido(),dtoperso.getTitulo(), dtoperso.getDescripcion(),dtoperso.getImg());
         sPersona.save(persona);
         return new ResponseEntity(new Mensaje("Persona agregada"), HttpStatus.OK);
-    }
+    }*/
 
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody DtoPersona dtoperso) {
@@ -76,7 +70,7 @@ public class CPersona {
         if (StringUtils.isBlank(dtoperso.getNombre())) {
             return new ResponseEntity(new Mensaje("Es obligatorio colocar un nombre"), HttpStatus.BAD_REQUEST);
         }
-
+        
         //compara apellido de persona
         if (sPersona.existsByNombre(dtoperso.getApellido()) && sPersona.getByNombre(dtoperso.getApellido()).get().getId() != id) {
             return new ResponseEntity(new Mensaje("Apellido existente"), HttpStatus.BAD_REQUEST);
@@ -85,7 +79,7 @@ public class CPersona {
         if (StringUtils.isBlank(dtoperso.getApellido())) {
             return new ResponseEntity(new Mensaje("Es obligatorio colocar un apellido"), HttpStatus.BAD_REQUEST);
         }
-
+        
         //compara descripcion
         if (sPersona.existsByNombre(dtoperso.getDescripcion()) && sPersona.getByNombre(dtoperso.getDescripcion()).get().getId() != id) {
             return new ResponseEntity(new Mensaje("Descripción existente"), HttpStatus.BAD_REQUEST);
@@ -94,7 +88,8 @@ public class CPersona {
         if (StringUtils.isBlank(dtoperso.getDescripcion())) {
             return new ResponseEntity(new Mensaje("Es obligatorio colocar una descripción"), HttpStatus.BAD_REQUEST);
         }
-
+        
+         
         //compara nombre titulo
         if (sPersona.existsByNombre(dtoperso.getTitulo()) && sPersona.getByNombre(dtoperso.getTitulo()).get().getId() != id) {
             return new ResponseEntity(new Mensaje("Título existente"), HttpStatus.BAD_REQUEST);
@@ -103,7 +98,7 @@ public class CPersona {
         if (StringUtils.isBlank(dtoperso.getTitulo())) {
             return new ResponseEntity(new Mensaje("Es obligatorio colocar un título"), HttpStatus.BAD_REQUEST);
         }
-
+        
         //compara nombre de imagen
         if (sPersona.existsByNombre(dtoperso.getImg()) && sPersona.getByNombre(dtoperso.getImg()).get().getId() != id) {
             return new ResponseEntity(new Mensaje("Imagen existente"), HttpStatus.BAD_REQUEST);
@@ -124,13 +119,8 @@ public class CPersona {
         return new ResponseEntity(new Mensaje("Persona actualizada"), HttpStatus.OK);
 
     }
-<<<<<<< HEAD
-
-    @DeleteMapping("/delete/{id}")
-=======
     
-   @DeleteMapping("/delete/{id}")
->>>>>>> 1e2b5e5c5f908c8f3161f3c781eb7bbf216f43e3
+   /* @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id) {
         //se valida si existe id
         if (!sPersona.existsById(id)) {
@@ -140,11 +130,7 @@ public class CPersona {
         sPersona.delete(id);
         return new ResponseEntity(new Mensaje("Persona eliminada"), HttpStatus.OK);
 
-    }
-<<<<<<< HEAD
-
-=======
+    }*/
     
     
->>>>>>> 1e2b5e5c5f908c8f3161f3c781eb7bbf216f43e3
 }
